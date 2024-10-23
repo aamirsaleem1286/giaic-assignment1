@@ -8,24 +8,19 @@ const ContactPage = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        // Simulate a 5-second delay
         await new Promise((resolve) => setTimeout(resolve, 1000));
-
-        // Simulate an error
+        //an error
         throw new Error('Error page.');
       } catch (err) {
-        // Handle the error by checking if it's an instance of Error
         if (err instanceof Error) {
           setError(err.message);
         } else {
           setError('An unknown error occurred');
         }
-
-        // Set a timeout to hide the error after 5 seconds and show the contact page
         setTimeout(() => {
-          setError(null); // Clear the error
-          setShowContent(true); // Show the content
-        }, 5000); // Display error for 5 seconds
+          setError(null); 
+          setShowContent(true); 
+        }, 5000); 
       }
     };
 
